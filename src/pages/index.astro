@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const allPosts = await Astro.glob("./posts/*.md");
+allPosts.sort((a, b) => {
+  return (
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+  );
+});
+const intlFormatter = new Intl.DateTimeFormat("en-SG", {
+  day: "2-digit",
+  month: "long",
+});
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="px-1 flex-1 grid justify-items-center sm:px-8">
+    <div class="border-x-2 max-w-6xl w-full">
+      <div
+        class="bg-cobalt gutter grid content-center border-b-2 max-h-64 py-4"
+      >
+        <h1 class="text-3xl sm:text-4xl font-bold text-neutral-100">Posts</h1>
+      </div>
+
+      <ul>
+        {
+          allPosts.map((post) => (
+            <li class="border-b-2">
+              <a href={post.url}>
+                <span class="block gutter py-10">
+                  <h2 class="font-bold text-2xl sm:text-3xl">
+                    {post.frontmatter.title}
+                  </h2>
+
+                  <p class="text-lg sm:text-xl">
+                    {post.frontmatter.description}
+                  </p>
+                  <p class="font-medium text-lg sm:text-xl">
+                    {intlFormatter.format(new Date(post.frontmatter.pubDate))}
+                  </p>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+</Layout>
