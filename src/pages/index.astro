@@ -7,7 +7,7 @@ allPosts.sort((a, b) => {
   return b.data.pubDate.getTime() - a.data.pubDate.getTime();
 });
 const intlFormatter = new Intl.DateTimeFormat("en-SG", {
-  day: "2-digit",
+  day: "numeric",
   month: "long",
 });
 ---
@@ -25,7 +25,10 @@ const intlFormatter = new Intl.DateTimeFormat("en-SG", {
         {
           allPosts.map((post) => (
             <li class="border-b-2">
-              <a href={`/posts/${post.slug}`}>
+              <a
+                href={`/posts/${post.slug}`}
+                transition:name={`${post.data.title}`}
+              >
                 <span class="block gutter py-10">
                   <h2 class="font-bold text-2xl sm:text-3xl">
                     {post.data.title}

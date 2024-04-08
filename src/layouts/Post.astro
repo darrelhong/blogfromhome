@@ -13,7 +13,10 @@ const intlFormatter = new Intl.DateTimeFormat("en-SG", {
   <main class="px-1 flex-1 grid justify-items-center sm:px-8">
     <div class="border-x-2 max-w-6xl w-full">
       <div class="py-10 bg-darkpink gutter border-b-2">
-        <div class="max-w-screen-sm mx-auto">
+        <div
+          class="max-w-screen-sm mx-auto"
+          transition:name={`${frontmatter.title}`}
+        >
           <h1 class="text-3xl sm:text-4xl font-bold mb-1">
             {frontmatter.title}
           </h1>
