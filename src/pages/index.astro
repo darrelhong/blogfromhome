@@ -1,12 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => {
-  return (
-    new Date(b.frontmatter.pubDate).getTime() -
-    new Date(a.frontmatter.pubDate).getTime()
-  );
+  return b.data.pubDate.getTime() - a.data.pubDate.getTime();
 });
 const intlFormatter = new Intl.DateTimeFormat("en-SG", {
   day: "2-digit",
@@ -27,17 +25,15 @@ const intlFormatter = new Intl.DateTimeFormat("en-SG", {
         {
           allPosts.map((post) => (
             <li class="border-b-2">
-              <a href={post.url}>
+              <a href={`/posts/${post.slug}`}>
                 <span class="block gutter py-10">
                   <h2 class="font-bold text-2xl sm:text-3xl">
-                    {post.frontmatter.title}
+                    {post.data.title}
                   </h2>
 
-                  <p class="text-lg sm:text-xl">
-                    {post.frontmatter.description}
-                  </p>
+                  <p class="text-lg sm:text-xl">{post.data.description}</p>
                   <p class="font-medium text-lg sm:text-xl">
-                    {intlFormatter.format(new Date(post.frontmatter.pubDate))}
+                    {intlFormatter.format(new Date(post.data.pubDate))}
                   </p>
                 </span>
               </a>

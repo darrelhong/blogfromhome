@@ -1,10 +1,9 @@
 ---
-layout: "../../layouts/Post.astro"
 title: "Git: 3 ways"
 pubDate: 2024-04-03
 description: "Evolving methods of interacting with Git."
 author: "Darrel"
-image:
+image: {}
 tags: ["Git", "Development", "Thoughts"]
 readTime: 5
 ---
