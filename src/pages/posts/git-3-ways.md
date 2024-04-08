@@ -6,6 +6,7 @@ description: "Evolving methods of interacting with Git."
 author: "Darrel"
 image:
 tags: ["Git", "Development", "Thoughts"]
+readTime: 5
 ---
 
 ## Command line

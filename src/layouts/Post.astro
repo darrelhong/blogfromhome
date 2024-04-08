@@ -2,6 +2,11 @@
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
+const intlFormatter = new Intl.DateTimeFormat("en-SG", {
+  day: "numeric",
+  month: "long",
+  year: "2-digit",
+});
 ---
 
 <Layout title={frontmatter.title}>
@@ -9,9 +14,51 @@ const { frontmatter } = Astro.props;
     <div class="border-x-2 max-w-6xl w-full">
       <div class="py-10 bg-darkpink gutter border-b-2">
         <div class="max-w-screen-sm mx-auto">
-          <h1 class="text-3xl sm:text-4xl font-bold">
+          <h1 class="text-3xl sm:text-4xl font-bold mb-1">
             {frontmatter.title}
           </h1>
+
+          <div class="flex items-center gap-3 flex-wrap font-medium">
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-4 shrink-0"
+              >
+                <path
+                  d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <p>
+                {intlFormatter.format(new Date(frontmatter.pubDate))}
+              </p>
+            </div>
+
+            {
+              frontmatter.readTime && (
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-4 shrink-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p>{frontmatter.readTime} minute read</p>
+                </div>
+              )
+            }
+          </div>
         </div>
       </div>
 

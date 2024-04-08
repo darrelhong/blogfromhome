@@ -6,6 +6,7 @@ description: ""
 author: "Darrel"
 image:
 tags: ["Guide", "Fedora", "Linux"]
+readTime: 3
 ---
 
 ## Coming soon
