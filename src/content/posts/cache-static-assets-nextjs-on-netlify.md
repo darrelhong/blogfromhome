@@ -15,7 +15,7 @@ As you can see, the `Cache-Control` header has the max-age property set to 0, wh
 
 For static assets that don't change often, we would prefer to use the local browser cache, not requiring a network call instead. In fact, [by default](public,max-age=604800,immutable), Next.js sets the `Cache-Control` header to `public,max-age=604800,immutable` for [Static Image imports](https://nextjs.org/docs/app/building-your-application/optimizing/images#local-images).
 
-However, when deploying to Netlify, all assets, including local media are served with the headers as shown above. I believe this is due to an issue with the Netlify Next.js runtime, where it assumes that all assets are dynamic and therefore sets the `Cache-Control` header to `public, max-age=0, must-revalidate` [by default](https://docs.netlify.com/platform/caching/#default-values).
+However, when deploying to Netlify, all assets, including local media are served with the headers as shown above. This is due to media being accessed through a Netlify Function/Edge Function which sets the `Cache-Control` header to `public, max-age=0, must-revalidate` [by default](https://docs.netlify.com/platform/caching/#default-values).
 
 To fix this, we can use the `netlify.toml` configuration to modify headers for specific routes. In this case, we want to set custom `Cache-Control` headers for all media assets under `/_next/static/media/*`. To do this, create a `netlify.toml` file in the root of your project and add the following configuration:
 
