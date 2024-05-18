@@ -1,0 +1,42 @@
+---
+type Props = {
+  link?: string;
+  title: string;
+  imgSrc: string;
+  imgClass?: string;
+  reverse?: boolean;
+  bgClass: string;
+};
+
+const {
+  link,
+  title,
+  imgSrc,
+  reverse = false,
+  imgClass = "",
+  bgClass,
+} = Astro.props;
+---
+
+<a
+  href={link || null}
+  target="_blank"
+  class={`grid sm:grid-rows-1 sm:grid-cols-12 transition-colors`}
+>
+  <div
+    class={`sm:col-span-5 grid place-items-center py-12 px-4 border-b-2 sm:border-b-0 ${bgClass}`}
+  >
+    <p class="font-bold">{title} {link && "➜"}</p>
+  </div>
+  <div
+    class={`sm:col-span-7 aspect-[16/10] ${reverse ? "sm:-order-1 sm:border-e-2" : "sm:border-s-2"}`}
+  >
+    <img
+      src={imgSrc}
+      alt={title}
+      class={`object-cover size-full object-top ${imgClass}`}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</a>

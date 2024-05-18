@@ -1,17 +1,143 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Card from "./card.astro";
+import { ProjectList } from "./list";
+
+const bg = [
+  // "bg-[#CD8D7A]",
+  "bg-[#FF8787]",
+  // "bg-[#607274]",
+  // "bg-[#A7727D]",
+  "bg-[#579BB1]",
+  // "bg-[#8B7E74]",
+  "bg-[#9ED5C5]",
+  "bg-[#E5E483]",
+  // "bg-[#4B6587]",
+];
 ---
 
 <Layout title="Projects">
   <main class="px-1 flex-1 grid justify-items-center sm:px-8">
-    <div class="border-x-2 max-w-6xl w-full">
+    <div class="border-x-2 max-w-6xl w-full pb-8">
       <div
         class="bg-mauve gutter grid content-center border-b-2 max-h-64 py-20"
       >
         <h1 class="text-3xl sm:text-4xl font-bold text-neutral-100">
-          Coming soon!
+          Projects
         </h1>
       </div>
+      <ProjectList client:load />
+      <!-- <div class="space-y-8 *:border-y-2 [&>*:first-child]:border-t-0">
+        {
+          [
+            {
+              title: "NME The Cover",
+              link: "https://nme-the-cover.netlify.app/",
+              imgSrc: "/images/nme-the-cover.png",
+            },
+            {
+              title: "BandLab Licensing",
+              link: "https://licensing.bandlab.com/details/",
+              imgSrc: "/images/bandlab-licensing.png",
+            },
+            {
+              title: "ReverbNation Publishing",
+              link: "https://publishing.reverbnation.com",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "BandLab Deals",
+              link: "https://deals.bandlab.com",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "Experience Swee Lee",
+              link: "https://experience.sweelee.com/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "Swee Lee Listening Stations (best viewed on mobile)",
+              link: "https://experience.sweelee.com/listening-stations",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "BandLab Technologies",
+              link: "https://bandlabtechnologies.com/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "Bose x NME C24",
+              link: "https://bose-x-nme-c24.bandlab.com/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "Nike x Steezy x BandLab",
+              link: "https://stepintothebeat.bandlab.com/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "TikTok Live Coins",
+              link: "https://www.tiktok.com/coin",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "TikTok Live Balance",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "99.co",
+              link: "https://www.99.co/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "#supportlocal",
+              link: "https://supportlocal-sg.pages.dev/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "HDB resale price explorer",
+              link: "https://hdb-resale-prices.fly.dev/resale/resale_prices",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "Mobile ELISS",
+              link: "https://github.com/darrelhong/eliss",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "FormSG",
+              link: "https://github.com/opengovsg/FormSG",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "GoGovSG",
+              link: "https://github.com/opengovsg/GoGovSG",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "microURL",
+              link: "https://microurl-koyebapp.koyeb.app/",
+              imgSrc: "/images/rn-publishing.png",
+            },
+            {
+              title: "check-in-lah",
+              link: "https://check-in-lah.pages.dev/",
+              img: "/images/check-in-lah.png",
+            },
+            {
+              title: "Suduko",
+              link: "https://sudoku-darrelhong.vercel.app/",
+              img: "/images/check-in-lah.png",
+            },
+          ].map((card, index) => (
+            <Card
+              {...card}
+              reverse={index % 2 !== 0}
+              bgClass={bg[index % bg.length]}
+            />
+          ))
+        }
+      </div> -->
     </div>
   </main></Layout
 >
