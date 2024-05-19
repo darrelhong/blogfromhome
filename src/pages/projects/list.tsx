@@ -5,6 +5,7 @@ import {
   forwardRef,
   type ComponentPropsWithoutRef,
 } from "react";
+import type { ImageMetadata } from "astro";
 
 import NMETheCoverImage from "./images/nme-the-cover.avif";
 import BLLicensing from "./images/bandlab-licensing.avif";
@@ -16,6 +17,22 @@ import BLT from "./images/bandlab-technologies.avif";
 import C24 from "./images/c24.avif";
 import StepIntoTheBeat from "./images/step-into-the-beat.avif";
 import TTCoins from "./images/tiktok-coins.avif";
+import TTBalance from "./images/tiktok-balance.avif";
+import NNco from "./images/99co.avif";
+import SupportLocal from "./images/supportlocal.avif";
+import HDBResale from "./images/hdb-resale-prices.avif";
+import Arewecarliteyet from "./images/arewecarliteyet.avif";
+import Eliss from "./images/eliss.avif";
+import MicroURL from "./images/microurl.avif";
+import CheckInLah from "./images/check-in-lah.avif";
+import Sudoko from "./images/sudoku.avif";
+
+type Project = {
+  title: string;
+  link?: string;
+  description: string;
+  image?: ImageMetadata;
+};
 
 const projects = [
   {
@@ -75,41 +92,51 @@ const projects = [
   {
     title: "TikTok Live Coins",
     link: "https://www.tiktok.com/coin",
-    imgSrc: "/images/rn-publishing.png",
     image: TTCoins,
     description: "SSR, Styled Components, Webpack, TypeScript",
   },
   {
     title: "TikTok Live Balance",
     description: "WebView, Multi-page app, native APIs integration",
+    image: TTBalance,
   },
   {
     title: "99.co",
     link: "https://www.99.co/",
     description: "Single-page app, SSR, Responsive design, SEO",
+    image: NNco,
   },
-];
+] satisfies Project[];
 
 const ownProjects = [
   {
     title: "#supportlocal",
     link: "https://supportlocal-sg.pages.dev/",
     description: "SvelteKit, Supabase, PostgreSQL",
+    image: SupportLocal,
   },
   {
     title: "HDB resale price explorer",
     link: "https://hdb-resale-prices.fly.dev/resale/resale_prices",
     description: "SQLite, Datasette, Fly.io, Docker",
+    image: HDBResale,
+  },
+  {
+    title: "Are we car-lite yet?",
+    link: "https://arewecarliteyet.pages.dev/",
+    description: "SvelteKit",
+    image: Arewecarliteyet,
   },
   {
     title: "Mobile ELISS",
     link: "https://github.com/darrelhong/eliss",
     description: "Python, OpenCV, SwiftUI",
+    image: Eliss,
   },
   {
     title: "FormSG",
     link: "https://github.com/opengovsg/FormSG",
-    description: "React, MongoDB, Docker",
+    description: "React performance, Docker",
   },
   {
     title: "GoGovSG",
@@ -120,18 +147,21 @@ const ownProjects = [
     title: "microURL",
     link: "https://microurl-koyebapp.koyeb.app/",
     description: "Database per tenant, Turso, SQLite, GoLang",
+    image: MicroURL,
   },
   {
     title: "check-in-lah",
     link: "https://check-in-lah.pages.dev/",
     description: "SvelteKit, PocketBase",
+    image: CheckInLah,
   },
   {
-    title: "Suduko",
+    title: "Sudoku",
     link: "https://sudoku-darrelhong.vercel.app/",
-    description: "Next.js, Jotai",
+    description: "State management, re-rendering performance",
+    image: Sudoko,
   },
-] satisfies typeof projects;
+] satisfies Project[];
 
 export function ProjectList() {
   return (
@@ -153,14 +183,9 @@ export function ProjectList() {
   );
 }
 
-function ProjectItem({
-  title,
-  description,
-  image,
-  link,
-}: (typeof projects)[0]) {
+function ProjectItem({ title, description, image, link }: Project) {
   return (
-    <AccordionItem value={title}>
+    <AccordionItem value={title!!}>
       <AccordionTrigger>
         <div className="text-start">
           <p className="font-medium text-lg">{title}</p>
@@ -174,22 +199,25 @@ function ProjectItem({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block group"
+              className="inline-block group break-all "
             >
               <span className="font-medium decoration-dashed underline-offset-4 group-hover:text-x-marine decoration-x-marine underline duration-200 ease-in">
                 {link}
-              </span>{" "}
+              </span>
+              &nbsp;
               <span className="text-darkpink">➜</span>
             </a>
           )}
         </div>
-        {image && (
+        {image ? (
           <img
             src={image.src}
             height={image.height}
             width={image.width}
             alt={title}
           />
+        ) : (
+          <div></div>
         )}
       </AccordionContent>
     </AccordionItem>
