@@ -40,6 +40,16 @@ const { title } = Astro.props;
     </header>
 
     <slot />
+
+    <footer class="border-t-2 px-1 sm:px-8">
+      <div class="border-x-2 max-w-6xl mx-auto flex px-2 py-1 items-center">
+        <span>
+          © {new Date().getFullYear()} Darrel
+        </span>
+        <a href="https://github.com/darrelhong" class="ms-auto">GitHub</a>
+      </div>
+    </footer>
+
     <style is:global>
       @tailwind base;
       @tailwind components;
