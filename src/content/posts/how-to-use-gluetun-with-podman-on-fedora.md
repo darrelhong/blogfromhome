@@ -5,7 +5,7 @@ description: ""
 author: "Darrel"
 image: {}
 tags: ["Guide", "Fedora", "Linux"]
-readTime: 3
+readTime: 4
 ---
 
 Gluetun is a VPN client that can be used with containerized applications. However, it is not as straightforward to use with Podman/Fedora as compared to Docker and other distros. I was also unable to find a good resource on how to resolve the issues, therefore, I hope this guide will help anyone who is also trying to use Gluetun with Podman on Fedora.
