@@ -55,12 +55,7 @@ const projects = [
     description: "Framer Motion, Airtable, interactive carousel",
     image: RNPublishing,
   },
-  {
-    title: "BandLab Deals",
-    link: "https://deals.bandlab.com",
-    description: "Framer Motion, Tailwind CSS, Netlify",
-    image: BLDeals,
-  },
+
   {
     title: "Experience Swee Lee",
     link: "https://experience.sweelee.com/",
@@ -90,6 +85,12 @@ const projects = [
     link: "https://stepintothebeat.bandlab.com/",
     description: "Tailwind CSS, Framer Motion, CSS Animations",
     image: StepIntoTheBeat,
+  },
+  {
+    title: "BandLab Deals",
+    link: "https://deals.bandlab.com",
+    description: "Framer Motion, Tailwind CSS, Netlify",
+    image: BLDeals,
   },
   {
     title: "TikTok Live Coins",
@@ -124,17 +125,18 @@ const ownProjects = [
     image: HDBResale,
   },
   {
+    title: "microURL",
+    link: "https://microurl-koyebapp.koyeb.app/",
+    description: "Database per tenant, Turso, SQLite, GoLang",
+    image: MicroURL,
+  },
+  {
     title: "Are we car-lite yet?",
     link: "https://arewecarliteyet.pages.dev/",
     description: "SvelteKit",
     image: Arewecarliteyet,
   },
-  {
-    title: "Mobile ELISS",
-    link: "https://github.com/darrelhong/eliss",
-    description: "Python, OpenCV, SwiftUI",
-    image: Eliss,
-  },
+
   {
     title: "FormSG",
     link: "https://github.com/opengovsg/FormSG",
@@ -145,12 +147,7 @@ const ownProjects = [
     link: "https://github.com/opengovsg/GoGovSG",
     description: "EJS, Express",
   },
-  {
-    title: "microURL",
-    link: "https://microurl-koyebapp.koyeb.app/",
-    description: "Database per tenant, Turso, SQLite, GoLang",
-    image: MicroURL,
-  },
+
   {
     title: "check-in-lah",
     link: "https://check-in-lah.pages.dev/",
@@ -162,6 +159,12 @@ const ownProjects = [
     link: "https://sudoku-darrelhong.vercel.app/",
     description: "State management, re-rendering performance",
     image: Sudoko,
+  },
+  {
+    title: "Mobile ELISS",
+    link: "https://github.com/darrelhong/eliss",
+    description: "Python, OpenCV, SwiftUI",
+    image: Eliss,
   },
 ] satisfies Project[];
 
