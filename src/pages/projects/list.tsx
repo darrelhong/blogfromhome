@@ -30,6 +30,7 @@ import Sudoko from "./images/sudoku.avif";
 type Project = {
   title: string;
   link?: string;
+  href?: string;
   description: string;
   image?: ImageMetadata;
 };
@@ -43,6 +44,7 @@ const projects = [
   },
   {
     title: "BandLab Licensing",
+    href: "https://deploy-preview-2--bandlab-licensing.netlify.app/details",
     link: "https://licensing.bandlab.com/details/",
     description: "Form validation (react-hook-form with zod), AWS S3",
     image: BLLicensing,
@@ -183,7 +185,7 @@ export function ProjectList() {
   );
 }
 
-function ProjectItem({ title, description, image, link }: Project) {
+function ProjectItem({ title, description, image, link, href }: Project) {
   return (
     <AccordionItem value={title!!}>
       <AccordionTrigger>
@@ -196,7 +198,7 @@ function ProjectItem({ title, description, image, link }: Project) {
         <div className="space-y-2 px-4">
           {link && (
             <a
-              href={link}
+              href={href || link}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block group break-all "
