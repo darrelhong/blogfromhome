@@ -38,7 +38,7 @@ type Project = {
 const projects = [
   {
     title: "NME The Cover",
-    link: "https://nme-the-cover.netlify.app/",
+    link: "https://www.nme.com/the-cover",
     description: "Next.js, Framer Motion, WordPress, Tailwind CSS",
     image: NMETheCoverImage,
   },
