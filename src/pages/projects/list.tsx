@@ -26,6 +26,8 @@ import Eliss from "./images/eliss.avif";
 import MicroURL from "./images/microurl.avif";
 import CheckInLah from "./images/check-in-lah.avif";
 import Sudoko from "./images/sudoku.avif";
+import Mannys from "./images/mannys.avif";
+import CMG from "./images/cmg.avif";
 
 type Project = {
   title: string;
@@ -75,6 +77,12 @@ const projects = [
     image: BLT,
   },
   {
+    title: "Caldecott Music Group",
+    link: "https://cmg-web-vista.netlify.app/",
+    description: "Next.js, WordPress, Framer Motion",
+    image: CMG,
+  },
+  {
     title: "Bose x NME C24",
     link: "https://bose-x-nme-c24.bandlab.com/",
     description: "Framer Motion, Netlify, Airtable",
@@ -87,8 +95,14 @@ const projects = [
     image: StepIntoTheBeat,
   },
   {
+    title: "Manny's",
+    link: "https://mannys.com/",
+    description: "Next.js, Tailwind CSS, CSS Animations",
+    image: Mannys,
+  },
+  {
     title: "BandLab Deals",
-    link: "https://deals.bandlab.com",
+    link: "https://deals.bandlab.com?webview",
     description: "Framer Motion, Tailwind CSS, Netlify",
     image: BLDeals,
   },
