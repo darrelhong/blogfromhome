@@ -28,6 +28,7 @@ import CheckInLah from "./images/check-in-lah.avif";
 import Sudoko from "./images/sudoku.avif";
 import Mannys from "./images/mannys.avif";
 import CMG from "./images/cmg.avif";
+import HeritageWeb from "./images/heritage-web.avif";
 
 type Project = {
   title: string;
@@ -45,19 +46,24 @@ const projects = [
     image: NMETheCoverImage,
   },
   {
+    title: "ReverbNation Publishing",
+    link: "https://publishing.reverbnation.com",
+    description: "Framer Motion, Airtable, interactive carousel",
+    image: RNPublishing,
+  },
+  {
+    title: "Heritage Guitars",
+    link: "https://heritage-web.netlify.app/",
+    description: "Next.js, Tailwind CSS",
+    image: HeritageWeb,
+  },
+  {
     title: "BandLab Licensing",
     href: "https://deploy-preview-2--bandlab-licensing.netlify.app/details",
     link: "https://licensing.bandlab.com/details/",
     description: "Form validation (react-hook-form with zod), AWS S3",
     image: BLLicensing,
   },
-  {
-    title: "ReverbNation Publishing",
-    link: "https://publishing.reverbnation.com",
-    description: "Framer Motion, Airtable, interactive carousel",
-    image: RNPublishing,
-  },
-
   {
     title: "Experience Swee Lee",
     link: "https://experience.sweelee.com/",
