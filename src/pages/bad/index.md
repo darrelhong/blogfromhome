@@ -37,6 +37,10 @@ When I want components, I use [Radix](https://radix-ui.com/primitives) or [Melt 
 
 When I want animations, I use [Framer](https://www.framer.com/motion/) or [GSAP](https://gsap.com/)
 
+When I want validation, I use [Zod](https://zod.dev/)
+
+When I wan utilities, I use [Lodash](https://lodash.com/)
+
 When I want LLMs, I use [llamafile](https://github.com/Mozilla-Ocho/llamafile) or [LangChain](https://www.langchain.com/)
 
 When I want orchestration, I use [Compose](https://docs.docker.com/compose/) or [Kubernetes](https://kubernetes.io/)
