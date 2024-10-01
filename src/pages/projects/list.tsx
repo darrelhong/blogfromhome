@@ -29,6 +29,7 @@ import Sudoko from "./images/sudoku.avif";
 import Mannys from "./images/mannys.avif";
 import CMG from "./images/cmg.avif";
 import HeritageWeb from "./images/heritage-web.avif";
+import ElectionSG from "./images/election-sg.avif";
 
 type Project = {
   title: string;
@@ -143,6 +144,12 @@ const ownProjects = [
     link: "https://hdb-resale-prices.fly.dev/resale/resale_prices",
     description: "SQLite, Datasette, Fly.io, Docker",
     image: HDBResale,
+  },
+  {
+    title: "ElectionSG",
+    link: "https://electionsg.pages.dev/",
+    description: "MapLibre GL, SvelteKit",
+    image: ElectionSG,
   },
   {
     title: "microURL",
