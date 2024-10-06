@@ -153,7 +153,7 @@ const ownProjects = [
   },
   {
     title: "microURL",
-    link: "https://microurl-koyebapp.koyeb.app/",
+    link: "https://github.com/darrelhong/micro-url",
     description: "Database per tenant, Turso, SQLite, GoLang",
     image: MicroURL,
   },
