@@ -42,7 +42,7 @@ Next, we will create a share. Add the following block to `/etc/samba/smb.conf`:
         public = yes
 ```
 
-You many require sudo permissions to edit the file.
+You may require sudo permissions to edit the file.
 
 ### Enable nmb
 
