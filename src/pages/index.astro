@@ -21,10 +21,10 @@ const intlFormatter = new Intl.DateTimeFormat("en-SG", {
         <h1 class="text-3xl sm:text-4xl font-bold text-neutral-100">Posts</h1>
       </div>
 
-      <ul>
+      <ul class="divide-y-2" >
         {
           allPosts.map((post) => (
-            <li class="border-b-2">
+            <li>
               <a
                 href={`/posts/${post.slug}`}
                 transition:name={`${post.data.title}`}
