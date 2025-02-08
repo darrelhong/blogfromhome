@@ -36,6 +36,20 @@ After rebooting, Bluetooth was working on the hackintosh.
 
 ## Sleep issues
 
-Sleep issues
-hibernatemode 0
-proximitywake 0
+The last issue I faced was that the hackintosh would randomly wake from sleep and stay on for a few seconds before going back to sleep. While the display would not turn on, it was still not ideal that the system would wake up randomly. The first thing to check would be the power settings.
+```bash
+pmset -g
+```
+
+Make sure that the following settings are set, which you can do so with:
+```bash 
+pmset -a hibernatemode 0
+pmset -a proximitywake 0
+```
+
+If the issue still persists, you can check the logs to see what is waking the system up:
+```bash
+log show --style syslog | fgrep "Wake reason"
+```
+
+If you see reasons with `RTC (Alaram)`, you should use the OpenCore config to disable RTC wake. The setting sould already be present in the config under `Kernel > Patch`.Find the `Disable RTC wake` patch and set the value `Enabled` value to `True`. Following this steps should help to resolve your hackintosh sleep issues.
